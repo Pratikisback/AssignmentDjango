@@ -1,0 +1,58 @@
+
+<style>
+    h1 {
+        text-align: center;
+        color: #333; /* Change the color as needed */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd; /* Border color - you can change it */
+    }
+
+    th {
+        background-color: #f2f2f2; /* Background color for header row */
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9; /* Background color for even rows */
+    }
+
+    a {
+        color: #007BFF; /* Link color - you can change it */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<h1>Project List</h1>
+
+<table>
+    <tr>
+        <th>Project Name</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+    {% for project in projects %}
+        <tr>
+        
+                <td>{{project.project_name}}</td>
+                <td>{{project.description}}</td>
+                <td>{{project.start_date}}</td>
+                <td>{{project.end_date}}</td>
+                <td><a href="{% url 'single-project' project.id %}">View</a></td>
+        </tr>
+    {% endfor %}
+</table>
+

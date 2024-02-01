@@ -1,0 +1,92 @@
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4; /* Background color - you can change it */
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        max-width: 600px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-color: #ddd;
+        margin-top: 20px;
+    }
+</style>
+
+<h1>Project Details</h1>
+
+<table>
+    <tr>
+        <th>Project Name</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+    {% for project in projects %}
+        <tr>
+        
+                <td>{{project.project_name}}</td>
+                <td>{{project.description}}</td>
+                <td>{{project.start_date}}</td>
+                <td>{{project.end_date}}</td>
+                
+        </tr>
+    {% endfor %}
+</table>
+
+<hr>
+<ul>
+{% for task in tasks %}
+    <li>Title: {{task.title}}</li>
+    <li>Description:{{task.description}}</li>
+    <li>Deadline:{{task.deadline}}</li>
+    <li>User:{{task.user}}</li>
+    <li>Status:{{task.status}}</li>
+{% endfor %}
+</ul>
